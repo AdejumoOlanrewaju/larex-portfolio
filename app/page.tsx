@@ -26,29 +26,33 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'Telex Blog',
       tech: 'Next.js, TailwindCSS, Firebase',
-      description: 'Full-featured online store with payment integration, real-time inventory, and admin dashboard.',
-      gradient: 'from-purple-500 to-pink-500'
+      description: 'Telex Blog is a full-featured blogging website with database, custom cms and admin dashboard.',
+      gradient: 'from-purple-500 to-pink-500',
+      link : "telex-blog.vercel.app"
     },
     {
-      title: 'Task Management App',
-      tech: 'React.js, Bootstrap, Firebase',
-      description: 'Collaborative project management tool with real-time updates and team collaboration features.',
-      gradient: 'from-blue-500 to-cyan-500'
+      title: 'Telex Chat',
+      tech: 'Angular, Bootstrap, Firebase',
+      description: 'Telex Chat Fully functional chat application in angular with so many features like Search, real time chat, authentication system, and timestamp',
+      gradient: 'from-blue-500 to-cyan-500',
+      link : "telex-chat-ng.vercel.app"
     },
     {
-      title: 'Corporate Dashboard',
-      tech: 'Angular, TailwindCSS, Firebase',
-      description: 'Enterprise analytics dashboard with data visualization and reporting capabilities.',
-      gradient: 'from-orange-500 to-red-500'
+      title: 'Nova AI',
+      tech: 'React js, TailwindCSS',
+      description: 'Nova AI is a nice and modern looking landing for an ai tool. It is a nice, responsive multi page website',
+      gradient: 'from-orange-500 to-red-500',
+      link : "nova-ai-jet-ten.vercel.app/"
     },
-    {
-      title: 'Social Media Platform',
-      tech: 'Next.js, React.js, Firebase',
-      description: 'Social networking application with user profiles, posts, comments, and real-time chat.',
-      gradient: 'from-green-500 to-emerald-500'
-    }
+    // {
+    //   title: 'Social Media Platform',
+    //   tech: 'Next.js, React.js, Firebase',
+    //   description: 'Social networking application with user profiles, posts, comments, and real-time chat.',
+    //   gradient: 'from-green-500 to-emerald-500',
+    //   link : "/"
+    // }
   ];
 
   const scrollToSection = (id: string) => {
@@ -68,7 +72,7 @@ export default function Portfolio() {
 
       {/* Navigation */}
       <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-slate-900/80 backdrop-blur-xl shadow-lg shadow-purple-500/10' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="text-2xl font-bold flex items-center gap-2">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center">
@@ -78,21 +82,19 @@ export default function Portfolio() {
                 DevMaster
               </span>
             </div>
-            
+
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
               {['home', 'skills', 'projects', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className={`text-sm font-medium transition-all duration-300 hover:text-purple-400 relative group ${
-                    activeSection === section ? 'text-purple-400' : 'text-slate-300'
-                  }`}
+                  className={`text-sm font-medium transition-all duration-300 hover:text-purple-400 relative group ${activeSection === section ? 'text-purple-400' : 'text-slate-300'
+                    }`}
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 transition-all duration-300 ${
-                    activeSection === section ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}></span>
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 transition-all duration-300 ${activeSection === section ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}></span>
                 </button>
               ))}
               <button
@@ -104,7 +106,7 @@ export default function Portfolio() {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="md:hidden text-white p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -133,60 +135,66 @@ export default function Portfolio() {
 
       {/* Hero Section */}
       <section id="home" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/20 backdrop-blur-sm">
-              <Star size={16} className="text-purple-400" />
-              <span className="text-sm font-medium text-purple-300">Available for Freelance Work</span>
-              <Star size={16} className="text-cyan-400" />
-            </div>
-            
-            <h1 className="text-5xl md:text-8xl font-black mb-6 leading-tight">
-              <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
-                Full Stack
-              </span>
-              <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-gradient">
-                Developer
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Transforming ideas into powerful, scalable web applications with 
-              <span className="text-purple-400 font-semibold"> Next.js</span>,
-              <span className="text-cyan-400 font-semibold"> React</span>, and
-              <span className="text-pink-400 font-semibold"> Firebase</span>
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button 
-                onClick={() => scrollToSection('projects')}
-                className="group px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-              >
-                View My Work
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="px-8 py-4 rounded-full bg-slate-800/50 backdrop-blur-sm text-white font-bold text-lg border-2 border-slate-700 hover:border-purple-500 hover:bg-slate-800 transition-all duration-300"
-              >
-                Get In Touch
-              </button>
+        <div className="max-w-[1440px] mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-3 items-center lg:gap-5">
+            <div className="text-center lg:text-start col-span-2">
+              <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/20 backdrop-blur-sm">
+                <Star size={16} className="text-purple-400" />
+                <span className="text-sm font-medium text-purple-300">Available for Freelance Work</span>
+                <Star size={16} className="text-cyan-400" />
+              </div>
+
+              <h1 className="text-5xl md:text-8xl font-black mb-6 leading-tight">
+                <span className="block bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
+                  Full Stack
+                </span>
+                <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent animate-gradient">
+                  Developer
+                </span>
+              </h1>
+
+              <p className="text-xl md:text-2xl text-slate-400 mb-10 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
+                Transforming ideas into powerful, scalable web applications with
+                <span className="text-purple-400 font-semibold"> Next.js</span>,
+                <span className="text-cyan-400 font-semibold"> React</span>, and
+                <span className="text-pink-400 font-semibold"> Firebase</span>
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
+                <button
+                  onClick={() => scrollToSection('projects')}
+                  className="group px-8 py-4 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                >
+                  View My Work
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="px-8 py-4 rounded-full bg-slate-800/50 backdrop-blur-sm text-white font-bold text-lg border-2 border-slate-700 hover:border-purple-500 hover:bg-slate-800 transition-all duration-300"
+                >
+                  Get In Touch
+                </button>
+              </div>
+
+              {/* Stats */}
+              {/* <div className="grid grid-cols-3 gap-8 mt-20 max-w-xl lg:mx-0 mx-auto">
+                <div className="text-center lg:text-start">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">50+</div>
+                  <div className="text-slate-400 text-sm">Projects Done</div>
+                </div>
+                <div className="text-center lg:text-start">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">100%</div>
+                  <div className="text-slate-400 text-sm">Client Satisfaction</div>
+                </div>
+                <div className="text-center lg:text-start">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent mb-2">5★</div>
+                  <div className="text-slate-400 text-sm">Fiverr Rating</div>
+                </div>
+              </div> */}
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mt-20 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">50+</div>
-                <div className="text-slate-400 text-sm">Projects Done</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">100%</div>
-                <div className="text-slate-400 text-sm">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent mb-2">5★</div>
-                <div className="text-slate-400 text-sm">Fiverr Rating</div>
-              </div>
+            <div className="img-container mt-12 lg:mt-0">
+              <img className='w-[500px] h-[600px] object-cover lg:h-full lg:w-full mx-auto lg:mx-0' src="./profile-pic.png" alt="" />
             </div>
           </div>
         </div>
@@ -194,7 +202,7 @@ export default function Portfolio() {
 
       {/* Skills Section */}
       <section id="skills" className="relative py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1440px] mx-auto">
           <div className="text-center mb-20">
             <div className="inline-block px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm font-semibold mb-4">
               TECH STACK
@@ -208,10 +216,10 @@ export default function Portfolio() {
               Cutting-edge tools and frameworks to build exceptional digital experiences
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
-              <div 
+              <div
                 key={index}
                 className="group relative p-8 rounded-2xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-purple-500/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20"
               >
@@ -229,7 +237,7 @@ export default function Portfolio() {
 
       {/* Projects Section */}
       <section id="projects" className="relative py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1440px] mx-auto">
           <div className="text-center mb-20">
             <div className="inline-block px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-semibold mb-4">
               PORTFOLIO
@@ -243,10 +251,11 @@ export default function Portfolio() {
               Real-world applications showcasing innovation and expertise
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <div 
+              <a href = {project.link}
+                target='_blank'
                 key={index}
                 className="group relative p-8 rounded-3xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-slate-700 transition-all duration-500 overflow-hidden"
               >
@@ -269,7 +278,7 @@ export default function Portfolio() {
                     <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                   </button>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -291,43 +300,43 @@ export default function Portfolio() {
               Have a project in mind? Let's make it happen!
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a 
-              href="mailto:your.email@example.com" 
+            <a
+              href="mailto:olanrewajuadejumo56@gmail.com"
               className="group p-8 rounded-2xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-purple-500/50 transition-all duration-300 text-center hover:transform hover:-translate-y-2"
             >
               <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Mail className="text-white" size={28} />
               </div>
               <h3 className="font-bold text-white mb-2 text-lg">Email</h3>
-              <p className="text-slate-400 text-sm">your.email@example.com</p>
+              <p className="text-slate-400 text-sm">olanrewajuadejumo56@gmail.com</p>
             </a>
-            
-            <a 
-              href="https://github.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+
+            <a
+              href="https://github.com/AdejumoOlanrewaju"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group p-8 rounded-2xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 text-center hover:transform hover:-translate-y-2"
             >
               <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Github className="text-white" size={28} />
               </div>
               <h3 className="font-bold text-white mb-2 text-lg">GitHub</h3>
-              <p className="text-slate-400 text-sm">@yourusername</p>
+              <p className="text-slate-400 text-sm">@AdejumoOlanrewaju</p>
             </a>
-            
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+
+            <a
+              href="https://www.linkedin.com/in/olanrewaju-adejumo-47375328b/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group p-8 rounded-2xl bg-slate-900/50 backdrop-blur-sm border border-slate-800 hover:border-blue-500/50 transition-all duration-300 text-center hover:transform hover:-translate-y-2"
             >
               <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Linkedin className="text-white" size={28} />
               </div>
               <h3 className="font-bold text-white mb-2 text-lg">LinkedIn</h3>
-              <p className="text-slate-400 text-sm">@yourusername</p>
+              <p className="text-slate-400 text-sm">@Olanrewaju Adejumo</p>
             </a>
           </div>
         </div>
@@ -335,7 +344,7 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className="relative py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-[1440px] mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center">
               <Sparkles size={16} className="text-white" />
